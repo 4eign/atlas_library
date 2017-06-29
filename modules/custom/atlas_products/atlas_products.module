@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Contains atlas_products.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function atlas_products_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the atlas_products module.
+    case 'help.page.atlas_products':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('custom module to manage products') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function atlas_products_theme() {
+  return [
+    'products_list' => array(
+      'variables' => array(
+        'uuid' => NULL,
+        'config' => NULL
+      ),
+      'template' => 'block--products-list',
+    ),
+  ];
+}

@@ -1,0 +1,15 @@
+entity.book_entity.add_form:
+  route_name: entity.book_entity.add_form
+  title: 'Add Book entity'
+  appears_on:
+    - entity.book_entity.collection
+entity.disk_entity.add_form:
+  route_name: entity.disk_entity.add_form
+  title: 'Add Disk entity'
+  appears_on:
+    - entity.disk_entity.collection
+entity.long_play_entity.add_form:
+  route_name: entity.long_play_entity.add_form
+  title: 'Add Long play entity'
+  appears_on:
+    - entity.long_play_entity.collection

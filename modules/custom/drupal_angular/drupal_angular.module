@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Contains drupal_angular.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function drupal_angular_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the drupal_angular module.
+    case 'help.page.drupal_angular':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module to install angular in the platform') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function drupal_angular_theme() {
+  return [
+    'drupal_angular' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ * Incluye la directiva de angular en la etiqueta HTML
+ */
+function drupal_angular_preprocess_html(&$variables)
+{
+  $variables['html_attributes']['data-ng-app'] = 'angularApp';
+
+}

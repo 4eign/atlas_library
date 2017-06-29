@@ -1,0 +1,14 @@
+
+<div data-ng-products-list ng-init="uuid='{{ uuid }}'">
+	<div ng-repeat="product in products['{{ uuid }}']">
+		<div ng-repeat="image_field in product.field_imagen">
+			{% set image_alt = "{[{image_field.alt}]}" %}
+			{% set image_url = "{[{image_field.url}]}" %}
+		</div>
+		{% for item in config.table_fields %}
+	        {% set field = "{[{ product."~item.service_field~" }]}"  %}
+	        <div>{{field}}</div>
+	      {% endfor %}
+	</div>
+	
+</div>

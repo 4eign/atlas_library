@@ -1,0 +1,66 @@
+add book entity entities:
+  title: 'Create new Book entity entities'
+
+administer book entity entities:
+  title: 'Administer Book entity entities'
+  description: 'Allow to access the administration form to configure Book entity entities.'
+  restrict access: true
+
+delete book entity entities:
+  title: 'Delete Book entity entities'
+
+edit book entity entities:
+  title: 'Edit Book entity entities'
+
+access book entity overview:
+  title: 'Access the Book entity overview page'
+
+view published book entity entities:
+  title: 'View published Book entity entities'
+
+view unpublished book entity entities:
+  title: 'View unpublished Book entity entities'
+add disk entity entities:
+  title: 'Create new Disk entity entities'
+
+administer disk entity entities:
+  title: 'Administer Disk entity entities'
+  description: 'Allow to access the administration form to configure Disk entity entities.'
+  restrict access: true
+
+delete disk entity entities:
+  title: 'Delete Disk entity entities'
+
+edit disk entity entities:
+  title: 'Edit Disk entity entities'
+
+access disk entity overview:
+  title: 'Access the Disk entity overview page'
+
+view published disk entity entities:
+  title: 'View published Disk entity entities'
+
+view unpublished disk entity entities:
+  title: 'View unpublished Disk entity entities'
+add long play entity entities:
+  title: 'Create new Long play entity entities'
+
+administer long play entity entities:
+  title: 'Administer Long play entity entities'
+  description: 'Allow to access the administration form to configure Long play entity entities.'
+  restrict access: true
+
+delete long play entity entities:
+  title: 'Delete Long play entity entities'
+
+edit long play entity entities:
+  title: 'Edit Long play entity entities'
+
+access long play entity overview:
+  title: 'Access the Long play entity overview page'
+
+view published long play entity entities:
+  title: 'View published Long play entity entities'
+
+view unpublished long play entity entities:
+  title: 'View unpublished Long play entity entities'

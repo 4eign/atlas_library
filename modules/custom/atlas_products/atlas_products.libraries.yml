@@ -1,0 +1,9 @@
+products:
+  version: 1.x
+  js:
+    js/ng-directive/products_list.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - drupal_angular/angular.all
+

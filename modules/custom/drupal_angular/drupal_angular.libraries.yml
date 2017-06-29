@@ -1,0 +1,26 @@
+angular.angularjs:
+  remote: https://github.com/angular/angular.js
+  version: 1.5.8
+  license:
+    name: MIT
+    url: https://github.com/angular/angular.js/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+   js/vendor/angular/angular.js: { minified: true }
+
+angular.request:
+  version: 1.5.8
+  license:
+    name: MIT
+    url: https://github.com/angular/angular.js/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+   js/vendor/angular/angular-resource.js: { minified: true }
+
+angular.all:
+  version: 1.x
+  js:
+    js/app.js: {}
+  dependencies:
+    - drupal_angular/angular.angularjs
+    - drupal_angular/angular.request

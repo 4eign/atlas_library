@@ -1,0 +1,14 @@
+{
+  "name": "drupal/atlas_products",
+  "type": "drupal-module",
+  "description": "custom module to manage products",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/atlas_products",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/atlas_products",
+    "source": "http://cgit.drupalcode.org/atlas_products"
+  },
+  "require": { }
+}

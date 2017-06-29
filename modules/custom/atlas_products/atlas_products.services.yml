@@ -1,0 +1,5 @@
+services:
+  atlas_products.products_list_service:
+    class: Drupal\atlas_products\Service\ProductsListService
+    arguments: []
+

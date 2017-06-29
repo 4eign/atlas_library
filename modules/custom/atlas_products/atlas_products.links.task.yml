@@ -1,0 +1,66 @@
+# Book entity routing definition
+book_entity.settings_tab:
+  route_name: book_entity.settings
+  title: 'Settings'
+  base_route: book_entity.settings
+
+entity.book_entity.canonical:
+  route_name: entity.book_entity.canonical
+  base_route: entity.book_entity.canonical
+  title: 'View'
+
+entity.book_entity.edit_form:
+  route_name: entity.book_entity.edit_form
+  base_route: entity.book_entity.canonical
+  title: 'Edit'
+
+entity.book_entity.delete_form:
+  route_name:  entity.book_entity.delete_form
+  base_route:  entity.book_entity.canonical
+  title: Delete
+  weight: 10
+
+# Disk entity routing definition
+disk_entity.settings_tab:
+  route_name: disk_entity.settings
+  title: 'Settings'
+  base_route: disk_entity.settings
+
+entity.disk_entity.canonical:
+  route_name: entity.disk_entity.canonical
+  base_route: entity.disk_entity.canonical
+  title: 'View'
+
+entity.disk_entity.edit_form:
+  route_name: entity.disk_entity.edit_form
+  base_route: entity.disk_entity.canonical
+  title: 'Edit'
+
+entity.disk_entity.delete_form:
+  route_name:  entity.disk_entity.delete_form
+  base_route:  entity.disk_entity.canonical
+  title: Delete
+  weight: 10
+
+# Long play entity routing definition
+long_play_entity.settings_tab:
+  route_name: long_play_entity.settings
+  title: 'Settings'
+  base_route: long_play_entity.settings
+
+entity.long_play_entity.canonical:
+  route_name: entity.long_play_entity.canonical
+  base_route: entity.long_play_entity.canonical
+  title: 'View'
+
+entity.long_play_entity.edit_form:
+  route_name: entity.long_play_entity.edit_form
+  base_route: entity.long_play_entity.canonical
+  title: 'Edit'
+
+entity.long_play_entity.delete_form:
+  route_name:  entity.long_play_entity.delete_form
+  base_route:  entity.long_play_entity.canonical
+  title: Delete
+  weight: 10
+

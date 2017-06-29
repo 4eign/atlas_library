@@ -1,0 +1,5 @@
+name: drupal_angular
+type: module
+description: Module to install angular in the platform
+core: 8.x
+package: Custom
