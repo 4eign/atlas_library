@@ -12,3 +12,12 @@ product_entity.admin.structure.settings:
   description: 'Configure Product entity entities'
   route_name: product_entity.settings
   parent: system.admin_structure
+
+# Product type menu items definition
+entity.product_type.collection:
+  title: 'Product type'
+  route_name: entity.product_type.collection
+  description: 'List Product type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

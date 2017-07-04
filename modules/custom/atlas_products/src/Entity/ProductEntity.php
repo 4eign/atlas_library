@@ -144,7 +144,116 @@ class ProductEntity extends ContentEntityBase implements ProductEntityInterface 
     $this->set('status', $published ? TRUE : FALSE);
     return $this;
   }
-
+  
+  /**
+   * custom getter setter
+   */
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getTitle() {
+    return $this->get('title')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setTitle($title) {
+    $this->set('title', $title);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getAuthor() {
+    return $this->get('author')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setAuthor($author) {
+    $this->set('author', $author);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getDescription() {
+    return $this->get('description')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setDescription($description) {
+    $this->set('description', $description);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getType() {
+    return $this->get('type')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setType($type) {
+    $this->set('type', $type);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getPrice() {
+    return $this->get('price')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setPrice($price) {
+    $this->set('price', $price);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getQuantity() {
+    return $this->get('quantity')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setQuantity($quantity) {
+    $this->set('quantity', $quantity);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getExpirationDate() {
+    return $this->get('expiration_date')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setExpiratonDate($expiration_date) {
+    $this->set('expiration_date', $expiration_date);
+    return $this;
+  }
+  
   /**
    * {@inheritdoc}
    */
@@ -286,11 +395,11 @@ class ProductEntity extends ContentEntityBase implements ProductEntityInterface 
       ->setRequired(TRUE)
       ->setRevisionable(TRUE);
   
-    $fields['priced_date'] = BaseFieldDefinition::create('changed')   //todo revisar si esto es una fecha cualquiera
-    ->setLabel(t('Priced date'))  //todo revisar si esta bien escrito el label
-    ->setDescription(t('The date the price was updated.'));
+    $fields['expiration_date'] = BaseFieldDefinition::create('changed')   //todo revisar si esto es una fecha cualquiera
+    ->setLabel(t('Expiration date'))
+    ->setDescription(t('The expiration date of the price product.'));
   
-    //todo add book category
+    //todo add product category
   
     //todo add image widget
 
