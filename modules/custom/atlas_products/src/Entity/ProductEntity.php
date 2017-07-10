@@ -378,26 +378,93 @@ class ProductEntity extends ContentEntityBase implements ProductEntityInterface 
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
   
-    $fields['type'] = BaseFieldDefinition::create('boolean')
+    $fields['state'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Book type'))
-      ->setDescription(t('A boolean indicating whether the book is new.'))
+      ->setDescription(t('A boolean indicating whether the product is new.'))
       ->setDefaultValue(TRUE);
   
     $fields['price'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('Individual book price'))
-      ->setDescription(t('The price of one individual book'))
+      ->setLabel(t('Individual product price'))
+      ->setDescription(t('The price of one individual product'))
       ->setRequired(TRUE)
       ->setRevisionable(TRUE);
   
     $fields['quantity'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Quantity'))
-      ->setDescription(t('Number of the books with the same characteristics'))
+      ->setDescription(t('Number of the products with the same characteristics'))
       ->setRequired(TRUE)
       ->setRevisionable(TRUE);
   
     $fields['expiration_date'] = BaseFieldDefinition::create('changed')   //todo revisar si esto es una fecha cualquiera
     ->setLabel(t('Expiration date'))
-    ->setDescription(t('The expiration date of the price product.'));
+    ->setDescription(t('The expiration date of the product price.'))
+      ->setSettings([
+        'max_length' => 300,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'image',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+    
+    $fields['image'] = BaseFieldDefinition::create('image')
+      ->setCardinality(3)
+      ->setLabel('Image');
+  
+    $fields['type'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel('Product type')
+      ->setCardinality(1)
+      ->setSetting('target_type', 'product_type')
+      ->setRequired(TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 5,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'autocomplete_type' => 'tags',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+      
+    $fields['category'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel('Product category')
+      ->setCardinality(1)
+      ->setSetting('target_type', 'product_category')
+      ->setRequired(TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 5,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'autocomplete_type' => 'tags',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+      
   
     //todo add product category
   

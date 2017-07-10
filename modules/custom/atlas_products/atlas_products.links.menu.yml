@@ -11,7 +11,7 @@ product_entity.admin.structure.settings:
   title: Product entity settings
   description: 'Configure Product entity entities'
   route_name: product_entity.settings
-  parent: system.admin_structure
+  parent: entity.product_entity.collection
 
 # Product type menu items definition
 entity.product_type.collection:
