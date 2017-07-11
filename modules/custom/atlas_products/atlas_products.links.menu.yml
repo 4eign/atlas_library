@@ -13,11 +13,16 @@ product_entity.admin.structure.settings:
   route_name: product_entity.settings
   parent: entity.product_entity.collection
 
-# Product type menu items definition
-entity.product_type.collection:
-  title: 'Product type'
-  route_name: entity.product_type.collection
-  description: 'List Product type (bundles)'
+# Book entity menu items definition
+entity.book_entity.collection:
+  title: 'Book entity list'
+  route_name: entity.book_entity.collection
+  description: 'List Book entity entities'
   parent: system.admin_structure
-  weight: 99
+  weight: 100
 
+book_entity.admin.structure.settings:
+  title: Book entity settings
+  description: 'Configure Book entity entities'
+  route_name: book_entity.settings
+  parent: entity.book_entity.collection

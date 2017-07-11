@@ -20,3 +20,25 @@ view published product entity entities:
 
 view unpublished product entity entities:
   title: 'View unpublished Product entity entities'
+add book entity entities:
+  title: 'Create new Book entity entities'
+
+administer book entity entities:
+  title: 'Administer Book entity entities'
+  description: 'Allow to access the administration form to configure Book entity entities.'
+  restrict access: true
+
+delete book entity entities:
+  title: 'Delete Book entity entities'
+
+edit book entity entities:
+  title: 'Edit Book entity entities'
+
+access book entity overview:
+  title: 'Access the Book entity overview page'
+
+view published book entity entities:
+  title: 'View published Book entity entities'
+
+view unpublished book entity entities:
+  title: 'View unpublished Book entity entities'

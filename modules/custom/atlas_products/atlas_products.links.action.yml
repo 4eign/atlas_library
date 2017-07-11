@@ -4,9 +4,9 @@ entity.product_entity.add_form:
   title: 'Add Product entity'
   appears_on:
     - entity.product_entity.collection
-entity.product_type.add_form:
-  route_name: entity.product_type.add_form
-  title: 'Add Product type'
-  appears_on:
-    - entity.product_type.collection
 
+entity.book_entity.add_form:
+  route_name: entity.book_entity.add_form
+  title: 'Add Book entity'
+  appears_on:
+    - entity.book_entity.collection
