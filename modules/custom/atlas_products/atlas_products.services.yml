@@ -3,3 +3,7 @@ services:
     class: Drupal\atlas_products\Service\ProductsListService
     arguments: []
 
+  atlas_products.book:
+    class: Drupal\atlas_products\Service\BookService
+    arguments: ['@entity.query']
+
