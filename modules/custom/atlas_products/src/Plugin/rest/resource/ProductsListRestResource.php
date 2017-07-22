@@ -89,7 +89,7 @@ class ProductsListRestResource extends ResourceBase {
     try {
       $products_service = \Drupal::service('atlas_products.products_list_service');
       $response = $products_service->getAllBooks();
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
       \Drupal::logger('No se pudo realizar la conexion al servicio rest'.$e);
     }
     
