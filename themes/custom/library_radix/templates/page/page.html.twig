@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+<header class="container-fluid">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Atlas</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Libros</a></li>
+        <li><a href="badges.html">Cds</a></li>
+        <li><a href="collapsible.html">Lps</a></li>
+        <li><a href="mobile.html">Peliculas</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Libros</a></li>
+        <li><a href="badges.html">Cds</a></li>
+        <li><a href="collapsible.html">Lps</a></li>
+        <li><a href="mobile.html">Peliculas</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main role="main">
+  <div class="container">
+    {{ page.content }}
+  </div>
+</main>
+
+{% if page.footer %}
+  <footer role="footer" class="page-footer">
+    <div class="container">
+      {{ page.footer }}
+    </div>
+  </footer>
+{% endif %}
+

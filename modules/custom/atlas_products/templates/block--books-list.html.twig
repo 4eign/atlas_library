@@ -1,18 +1,23 @@
 <div data-ng-books-list ng-init="uuid='{{ uuid }}'">
-	<div ng-repeat="book in books['{{ uuid }}']">
-    <div class="row">
+    <div class="row row-product">
+      <div ng-repeat="book in books['{{ uuid }}']">
       <div class="col s12 m7 l3">
-        <div class="card ">
+        <div class="card">
           <div class="card-image">
-              <img src="{[{ book.image.uri }]}">
+              <img class="activator" src="{[{ book.image.uri }]}">
               <span class="card-title">{[{ book.name }]}</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">+</i></a>
+              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
           </div>
           <div class="card-content">
-            <p>{[{ book.description }]}</p>
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p>{[{ book.price }]}</p>
           </div>
           <div class="card-action">
             <a href="#">This is a link</a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{[{ book.name }]}<i class="material-icons right">close</i></span>
+            <p>{[{ book.description }]}</p>
           </div>
         </div>
       </div>

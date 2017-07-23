@@ -12,6 +12,7 @@ regions:
   navbar_branding: 'Navbar branding'
   navbar_left:  'Navbar left'
   navbar_right: 'Navbar right'
+  logo: Logo
   content: Content
   footer: Footer
 
