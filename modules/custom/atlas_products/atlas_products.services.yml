@@ -5,5 +5,5 @@ services:
 
   atlas_products.book:
     class: Drupal\atlas_products\Service\BookService
-    arguments: ['@entity.query']
+    arguments: ['@entity_type.manager']
 

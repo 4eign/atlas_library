@@ -10,9 +10,10 @@ function drupal_set_message(message, type, uuid, el){
       type = 'danger';
     }
     var html = '<div class="row"><div aria-label="" role="contentinfo" class="messages messages--'+type+' alert alert-'+type+' uuid-'+ uuid +'"><div class="container"><div class="icon"></div><button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>'+ message +'</div></div></div>';
-    jQuery('.ajax-status-message-region').prepend(html);
-    jQuery(".ajax-status-message-region").slideDown(400);;
-};
+    var  ajax_status_message_region = jQuery('.ajax-status-message-region');
+    ajax_status_message_region.prepend(html);
+    ajax_status_message_region.slideDown(400);
+}
 
 function remove_drupal_message(uuid){
     jQuery(".uuid-"+ uuid).remove();
@@ -146,7 +147,7 @@ myApp.service(
           pending: pending,
           total: total,
           endRequest: endRequest,
-          startRequest: startRequest,
+          startRequest: startRequest
       });
       // ---
       // PUBLIC METHODS.

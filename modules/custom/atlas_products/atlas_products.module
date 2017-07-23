@@ -35,5 +35,12 @@ function atlas_products_theme() {
       ),
       'template' => 'block--products-list',
     ),
+    'books_list' => array(
+      'variables' => array(
+        'uuid' => NULL,
+        'config' => NULL
+      ),
+      'template' => 'block--books-list',
+    ),
   ];
 }

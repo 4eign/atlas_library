@@ -148,6 +148,126 @@ class BookEntity extends ContentEntityBase implements BookEntityInterface {
   /**
    * {@inheritdoc}
    */
+  public function getAuthor() {
+    return $this->get('author')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setAuthor($author) {
+    $this->set('author', $author);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getDescription() {
+    return $this->get('description')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setDescription($description) {
+    $this->set('description', $description);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getState() {
+    return $this->get('state')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setState($state) {
+    $this->set('state', $state);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getPrice() {
+    return $this->get('price')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setPrice($price) {
+    $this->set('price', $price);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getQuantity() {
+    return $this->get('quantity')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setQuantity($quantity) {
+    $this->set('quantity', $quantity);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getExpirationDate() {
+    return $this->get('expiration_date')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setExpirationDate($expiration_date) {
+    $this->set('expiration_date', $expiration_date);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getCategory() {
+    return $this->get('category');
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setCategory($category) {
+    $this->set('category', $category);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getImage() {
+    return $this->get('image');
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setImage($image) {
+    $this->set('image', $image);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
     

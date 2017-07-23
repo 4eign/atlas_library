@@ -7,3 +7,11 @@ products:
     - core/drupalSettings
     - drupal_angular/angular.all
 
+books:
+  version: 1.x
+  js:
+    js/ng-directive/books_list.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - drupal_angular/angular.all

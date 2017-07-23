@@ -1,0 +1,24 @@
+{
+  "name": "drupal_angular",
+  "homepage": "https://github.com/lfjimenez/atlas_library",
+  "description": "js libraries",
+  "main": "",
+  "authors": [
+    "lfjimenez"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "angular": "1.6.5"
+  },
+  "dependencies": {
+    "angular": "1.6.4",
+    "angular-resource": "^1.6.5"
+  }
+}
