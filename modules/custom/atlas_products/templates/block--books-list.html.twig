@@ -1,8 +1,8 @@
 <div data-ng-books-list ng-init="uuid='{{ uuid }}'">
     <div class="row row-product">
       <div ng-repeat="book in books['{{ uuid }}']">
-      <div class="col s12 m7 l3">
-        <div class="card">
+      <div class="col s12 m7 l3 book-card">
+        <div class="card large">
           <div class="card-image">
               <img class="activator" src="{[{ book.image.uri }]}">
               <span class="card-title">{[{ book.name }]}</span>

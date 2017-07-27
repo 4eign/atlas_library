@@ -2,6 +2,7 @@
 
 namespace Drupal\atlas_products\Service;
 use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\image\Entity\ImageStyle;
 
 
 /**
@@ -78,7 +79,16 @@ class BookService implements BookServiceInterface {
         $book['image'][$cont]['url'] = $image->get('uri')->value;
         $cont++;
         */
-        $book['image']['uri'] = file_create_url($image->get('uri')->value);
+        //$book['image']['uri'] = file_create_url($image->get('uri')->value);
+        /**
+         * create a new image with style
+         */
+        $original_image = $image->get('uri')->value;
+        $style = ImageStyle::load('book_card_image_207x309');  // Load the image style configuration entity.
+        $destination = $style->buildUri($original_image);
+        $style->createDerivative($original_image, $destination);
+        $url = $style->buildUrl($original_image);
+        $book['image']['uri'] = $url;
       }
       unset($image_entities);
       unset($cont);
