@@ -1,0 +1,5 @@
+name: remote_chat
+type: module
+description: Module to add remote chat script
+core: 8.x
+package: Custom

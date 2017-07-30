@@ -1,0 +1,7 @@
+remote_chat.chat_settings_form:
+  title: 'Chat Settings'
+  route_name: remote_chat.chat_settings_form
+  description: 'Chat Settings'
+  parent: system.admin_config_system
+  weight: 99
+

@@ -1,0 +1,14 @@
+{
+  "name": "drupal/remote_chat",
+  "type": "drupal-module",
+  "description": "Module to add remote chat script",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/remote_chat",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/remote_chat",
+    "source": "http://cgit.drupalcode.org/remote_chat"
+  },
+  "require": { }
+}

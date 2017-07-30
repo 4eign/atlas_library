@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * @file
+ * Contains remote_chat.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function remote_chat_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the remote_chat module.
+    case 'help.page.remote_chat':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module to add remote chat script') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function remote_chat_theme() {
+  return [
+    'remote_chat' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ * @param array $page
+ */
+function remote_chat_page_attachments(array &$page) {
+  
+  /**
+   * add script chat to the head html tag
+   */
+  $chat_settings = \Drupal::config('remote_chat.chatsettings');
+  
+  $inline_script = $chat_settings->get('remote_script');
+  
+  if(!is_null($inline_script)) {
+    if($inline_script == 0){
+      $script = $chat_settings->get('script');
+      $page['#attached']['html_head'][] = [
+        [
+          '#type' => 'html_tag',
+          '#tag' => 'script',
+          '#value' => $script,
+        ],
+        'chat',
+      ];
+    }elseif ($inline_script == 1){
+      $script_url = $chat_settings->get('script_url');
+      $page['#attached']['html_head'][] = [
+        [
+          '#type' => 'html_tag',
+          '#tag' => 'script',
+          '#attributes' => array('type' => 'text/javascript', 'src' => $script_url, 'async' => true),
+        ],
+        'chat',
+      ];
+    }
+    
+  }
+}
