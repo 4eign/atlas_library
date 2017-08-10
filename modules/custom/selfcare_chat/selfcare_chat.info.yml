@@ -1,0 +1,5 @@
+name: selfcare_chat
+type: module
+description: Module to install zendesk chat
+core: 8.x
+package: selfcare

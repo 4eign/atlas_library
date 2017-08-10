@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains atlas_core.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function atlas_core_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the atlas_core module.
+    case 'help.page.atlas_core':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('core functions') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function atlas_core_theme() {
+  return [
+    'atlas_core' => [
+      'render element' => 'children',
+    ],
+    'form_macros' => array(
+      'variables' => array(
+        'uuid' => NULL,
+        'config' => NULL
+      ),
+      'template' => 'form-macros',
+    ),
+  ];
+}

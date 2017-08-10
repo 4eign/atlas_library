@@ -4,6 +4,7 @@
  * Template for the main page.
  */
 #}
+{#
 <header class="container-fluid">
   <nav>
     <div class="nav-wrapper">
@@ -11,6 +12,40 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="sass.html">Libros</a></li>
+        <li><a href="badges.html">Cds</a></li>
+        <li><a href="collapsible.html">Lps</a></li>
+        <li><a href="mobile.html">Peliculas</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Libros</a></li>
+        <li><a href="badges.html">Cds</a></li>
+        <li><a href="collapsible.html">Lps</a></li>
+        <li><a href="mobile.html">Peliculas</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+#}
+<header class="container-fluid">
+  {% if page.headline %}
+    <section id="headline">
+      <div class= "container-fluid">
+            {{ page.headline }}
+      </div>
+    </section>
+  {% endif %}
+  <nav>
+    <div class="nav-wrapper">
+      {#
+      <a href="#!" class="brand-logo">
+      {% if page.logo %}
+        {{ page.logo }}
+      {% endif %}
+      </a>
+      #}
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/producto/libro">Libros</a></li>
         <li><a href="badges.html">Cds</a></li>
         <li><a href="collapsible.html">Lps</a></li>
         <li><a href="mobile.html">Peliculas</a></li>

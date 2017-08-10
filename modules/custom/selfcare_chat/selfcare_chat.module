@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * Contains selfcare_chat.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function selfcare_chat_help($route_name, RouteMatchInterface $route_match) {
+  $output = '';
+  switch ($route_name) {
+    // Main module help for the selfcare_chat module.
+    case 'help.page.selfcare_chat':
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module to install remote chat') . '</p>';
+      
+    default:
+  }
+  return $output;
+}
+
+/**
+ * Implements hook_page_attachments().
+ * @param array $page
+ */
+function selfcare_chat_page_attachments(array &$page) {
+  
+  /**
+   * add script chat to the head html tag
+   */
+  $chat_settings = \Drupal::config('selfcare_chat.chatsettings');
+  
+  $inline_script = $chat_settings->get('inline_script');
+  
+  if(!empty($inline_script) && !is_null($inline_script)) {
+    if($inline_script == TRUE){
+      $script = $chat_settings->get('script');
+      $page['#attached']['html_head'][] = [
+        [
+          '#type' => 'html_tag',
+          '#tag' => 'script',
+          '#value' => $script,
+        ],
+        'chat',
+      ];
+    }elseif ($inline_script == FALSE){
+      $script_url = $chat_settings->get('script_url');
+      $page['#attached']['html_head'][] = [
+        [
+          '#type' => 'html_tag',
+          '#tag' => 'script',
+          '#attributes' => array('type' => 'text/javascript', 'src' => $script_url, 'async' => true),
+        ],
+        'chat',
+      ];
+    }
+    
+  }
+}

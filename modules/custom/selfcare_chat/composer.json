@@ -1,0 +1,14 @@
+{
+  "name": "drupal/selfcare_chat",
+  "type": "drupal-module",
+  "description": "Module to install zendesk chat",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/selfcare_chat",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/selfcare_chat",
+    "source": "http://cgit.drupalcode.org/selfcare_chat"
+  },
+  "require": { }
+}

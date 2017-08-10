@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"library_radix.style.css","sourcesContent":[]}
+{"version":3,"sources":["components/_block--menuinicial.scss"],"names":[],"mappings":"AAAA;EACE,0BAAyB;EACzB,aAAW,EAMZ;EARD;IAKG,aAAW,EACV","file":"library_radix.style.css","sourcesContent":[".block--menuinicial{\n  background-color: #361E1E;\n  height:30px;\n .ul{\n   .li{\n   height:30px;\n   }\n }\n}"]}

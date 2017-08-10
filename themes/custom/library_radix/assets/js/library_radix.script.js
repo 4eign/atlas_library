@@ -8,6 +8,8 @@
   Drupal.behaviors.helloWorld = {
     attach: function (context) {
       console.log('Hello World');
+      $(".button-collapse").sideNav();
+
     }
   }
 

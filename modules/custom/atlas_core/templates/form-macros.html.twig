@@ -1,0 +1,31 @@
+{% macro setStyle(field) %}
+  {% import _self as macros %}
+  {% if field.type=='text_field' %}
+    {{ macros.printTextField(field) }}
+  {% elseif field.type=='text_area' %}
+    {{ macros.printTextArea(field) }}
+  {% elseif field.type=='check_box' %}
+    {{ macros.printCheckBox(field) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro printTextField(field) %}
+  <div class="input-field col s12 m4 l3">
+    <input placeholder="Placeholder" id="{{ field.id }}" type="text" class="validate">
+    <label for="{{ field.id }}">{{ field.label }}</label>
+  </div>
+{% endmacro %}
+
+{% macro printTextArea(field) %}
+  <div class="input-field col s12">
+    <textarea id="textarea1" class="materialize-textarea"></textarea>
+    <label for="textarea1">Textarea</label>
+  </div>
+{% endmacro %}
+
+{% macro printCheckBox(field) %}
+  <p>
+    <input type="checkbox" id="test5" />
+    <label for="test5">Red</label>
+  </p>
+{% endmacro %}

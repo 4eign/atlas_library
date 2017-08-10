@@ -34,11 +34,13 @@ class BookService implements BookServiceInterface {
   
   /**
    * load books entities
+   * @param null $books_ids
    */
-  public function loadBooks() {
+  public function loadBooks($books_ids = NULL) {
     $this->books = [];
     $entity_storage = $this->entity_type_manager->getStorage('book_entity');
-    $books_entities = $entity_storage->loadMultiple();
+    
+    $books_entities = $entity_storage->loadMultiple($books_ids);
     /**
      * format response
      */
@@ -96,6 +98,40 @@ class BookService implements BookServiceInterface {
       array_push($this->books,$book);
       unset($book);
     }
+  }
+  
+  /**
+   * @param $filters
+   * @return array
+   */
+  public function loadBooksByFilters($filters) {
+    $this->books = [];
+    $entity_storage = $this->entity_type_manager->getStorage('book_entity');
+    $query = $entity_storage->getQuery();
+    foreach ($filters as $filter){
+      $query->condition($filter->name, $filter->value, 'CONTAINS');
+    }
+    
+    $books_ids = $query->execute();
+    $this->loadBooks($books_ids);
+  
+    return $this->books;
+  }
+  
+  /**
+   * @param $start
+   * @param $end
+   * @return array
+   */
+  public function loadBooksByRange($start, $end) {
+    $this->books = [];
+    $entity_storage = $this->entity_type_manager->getStorage('book_entity');
+    $query = $entity_storage->getQuery();
+    $query->range($start, $end);
+    $books_ids = $query->execute();
+    $this->loadBooks($books_ids);
+    
+    return $this->books;
   }
   
 }

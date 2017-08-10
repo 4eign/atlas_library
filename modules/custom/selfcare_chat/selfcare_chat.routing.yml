@@ -1,0 +1,11 @@
+
+selfcare_chat.chat_settings_form:
+  path: '/admin/config/selfcare_chat/chatsettings'
+  defaults:
+    _form: '\Drupal\selfcare_chat\Form\ChatSettingsForm'
+    _title: 'Chat settings'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

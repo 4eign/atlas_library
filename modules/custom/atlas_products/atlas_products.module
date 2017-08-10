@@ -31,13 +31,14 @@ function atlas_products_theme() {
     'products_list' => array(
       'variables' => array(
         'uuid' => NULL,
-        'config' => NULL
+        'config' => NULL,
       ),
       'template' => 'block--products-list',
     ),
     'books_list' => array(
       'variables' => array(
         'uuid' => NULL,
+        'filters' => NULL,
         'config' => NULL
       ),
       'template' => 'block--books-list',

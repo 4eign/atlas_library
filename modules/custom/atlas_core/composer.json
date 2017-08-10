@@ -1,0 +1,14 @@
+{
+  "name": "drupal/atlas_core",
+  "type": "drupal-module",
+  "description": "core functions",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/atlas_core",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/atlas_core",
+    "source": "http://cgit.drupalcode.org/atlas_core"
+  },
+  "require": { }
+}
