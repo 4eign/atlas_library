@@ -1,0 +1,5 @@
+name: Images slider
+type: module
+description: module to create a custom images slider block
+core: 8.x
+package: 4eign

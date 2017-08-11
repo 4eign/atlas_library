@@ -1,0 +1,14 @@
+
+# Slider image entity menu items definition
+entity.slider_image_entity.collection:
+  title: 'Slider image entity list'
+  route_name: entity.slider_image_entity.collection
+  description: 'List Slider image entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+slider_image_entity.admin.structure.settings:
+  title: Slider image entity settings
+  description: 'Configure Slider image entity entities'
+  route_name: slider_image_entity.settings
+  parent: system.admin_structure

@@ -1,0 +1,14 @@
+{
+  "name": "drupal/images_slider",
+  "type": "drupal-module",
+  "description": "module to create a custom images slider block",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/images_slider",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/images_slider",
+    "source": "http://cgit.drupalcode.org/images_slider"
+  },
+  "require": { }
+}

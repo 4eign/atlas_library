@@ -1,0 +1,9 @@
+services:
+  images_slider.image_manager:
+    class: Drupal\images_slider\ImageManagerService
+    arguments: []
+
+  images_slider.image_manager:
+    class: Drupal\images_slider\ImageManagerService
+    arguments: []
+

@@ -1,0 +1,5 @@
+entity.slider_image_entity.add_form:
+  route_name: entity.slider_image_entity.add_form
+  title: 'Add Slider image entity'
+  appears_on:
+    - entity.slider_image_entity.collection

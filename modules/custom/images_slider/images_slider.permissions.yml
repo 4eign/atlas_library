@@ -1,0 +1,23 @@
+
+add slider image entity entities:
+  title: 'Create new Slider image entity entities'
+
+administer slider image entity entities:
+  title: 'Administer Slider image entity entities'
+  description: 'Allow to access the administration form to configure Slider image entity entities.'
+  restrict access: true
+
+delete slider image entity entities:
+  title: 'Delete Slider image entity entities'
+
+edit slider image entity entities:
+  title: 'Edit Slider image entity entities'
+
+access slider image entity overview:
+  title: 'Access the Slider image entity overview page'
+
+view published slider image entity entities:
+  title: 'View published Slider image entity entities'
+
+view unpublished slider image entity entities:
+  title: 'View unpublished Slider image entity entities'

@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains images_slider.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function images_slider_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the images_slider module.
+    case 'help.page.images_slider':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('module to create a custom images slider block') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function images_slider_theme() {
+  return [
+    'images_slider' => [
+      'render element' => 'children',
+    ],
+  ];
+}
