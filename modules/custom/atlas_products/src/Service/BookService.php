@@ -108,8 +108,8 @@ class BookService implements BookServiceInterface {
     $this->books = [];
     $entity_storage = $this->entity_type_manager->getStorage('book_entity');
     $query = $entity_storage->getQuery();
-    foreach ($filters as $filter){
-      $query->condition($filter->name, $filter->value, 'CONTAINS');
+    foreach ($filters as $filter => $value){
+      $query->condition($filter, $value, 'CONTAINS');
     }
     
     $books_ids = $query->execute();

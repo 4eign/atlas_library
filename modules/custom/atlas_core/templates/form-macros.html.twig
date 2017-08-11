@@ -11,7 +11,7 @@
 
 {% macro printTextField(field) %}
   <div class="input-field col s12 m4 l3">
-    <input placeholder="Placeholder" id="{{ field.id }}" type="text" class="validate">
+    <input placeholder="Placeholder" id="{{ field.id }}" ng-model="{{ field.id }}" type="text" class="validate">
     <label for="{{ field.id }}">{{ field.label }}</label>
   </div>
 {% endmacro %}

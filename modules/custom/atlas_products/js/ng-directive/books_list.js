@@ -8,7 +8,7 @@ function ngBooksList($http) {
     link: linkFunc
   };
 
-  function linkFunc(scope, el, attr, ctrl) {
+  function linkFunc(scope, el) {
     var config = drupalSettings.booksListBlockConfig[scope.uuid];
     retrieveInformation(scope, config, el);
 
@@ -28,13 +28,13 @@ function ngBooksList($http) {
 
   }
 
-  function retrieveInformation(scope, config, el) {
+  function retrieveInformation(scope, config) {
     if ( scope.resources.indexOf(config.url) == -1){
       var uuid = scope.uuid;
       $http.get(config.url)
-        .then(function (resp) {
+        .then(function successCallback(resp) {
           scope.books[uuid] = resp.data;
-        }, function (resp){
+        }, function errorCallback(resp){
           console.log(resp);
           drupal_set_message(Drupal.t("En este momento no podemos obtener tus productos, intenta de nuevo mas tarde."),"error", scope.uuid);
           scope.products[uuid].error = true;
@@ -43,9 +43,9 @@ function ngBooksList($http) {
   }
 }
 
-BooksController.$inject = ['$scope'];
+BooksController.$inject = ['$scope','$http'];
 
-function BooksController($scope) {
+function BooksController($scope,$http) {
   // Init vars
   if(  typeof $scope.books == 'undefined'){
     $scope.books = [];
@@ -56,5 +56,47 @@ function BooksController($scope) {
 
   if (typeof $scope.resources == 'undefined') {
     $scope.resources = [];
+  }
+
+  $scope.bookFilter = function () {
+    //Get config
+    var config = drupalSettings.booksListBlockConfig[$scope.uuid];
+
+    var filters = config.block_config.filters_fields;
+    console.log(filters);
+    //Get from filters values
+    var parameters = {};
+    for ( filter in filters) {
+      if (filters.hasOwnProperty(filter)){
+        var value = filters[filter];
+        if (!$scope[value.id] == '' || !$scope[value.id] === undefined) {
+          parameters[value.id] = $scope[value.id];
+        }
+      }
+    }
+
+    //Get drupal X-CSRF-Token
+    $http.get('/rest/session/token').then(function(resp) {
+        //Get Data For Filters;
+        $http({
+          method: 'POST',
+          url: config.url,
+          data: parameters,
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': resp.data
+          }
+        }).then(function successCallback(response) {
+          $scope.books[$scope.uuid] = response.data;
+        }, function errorCallback(response) {
+          console.log(response);
+          console.log("Error obteniendo los datos del servicio");
+        });
+      }, function errorCallback(resp) {
+        console.log(resp);
+        console.log("Error obteniendo el X-CSRF-Token");
+      }
+    );
+
   }
 }

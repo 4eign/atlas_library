@@ -3,6 +3,7 @@
 namespace Drupal\atlas_products\Plugin\rest\resource;
 
 use Drupal\Core\Session\AccountProxyInterface;
+use Drupal\rest\ModifiedResourceResponse;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -16,7 +17,8 @@ use Psr\Log\LoggerInterface;
  *   id = "books_list_rest_resource",
  *   label = @Translation("Books list rest resource"),
  *   uri_paths = {
- *     "canonical" = "/api/product/book"
+ *     "canonical" = "/api/product/book",
+ *     "https://www.drupal.org/link-relations/create" = "/api/product/book"
  *   }
  * )
  */
@@ -94,6 +96,30 @@ class BooksListRestResource extends ResourceBase {
     }
     
     return new ResourceResponse($response);
+  }
+  
+  
+  /**
+   * Responds to POST requests.
+   *
+   * @param $params
+   * @return \Drupal\rest\ModifiedResourceResponse
+   */
+  public function post($params) {
+    
+    // You must to implement the logic of your REST Resource here.
+    // Use current user after pass authentication to validate access.
+    if (!$this->currentUser->hasPermission('access content')) {
+      throw new AccessDeniedHttpException();
+    }
+    try {
+      $products_service = \Drupal::service('atlas_products.book');
+      $response = $products_service->loadBooksByFilters($params);
+    } catch (\Exception $e) {
+      \Drupal::logger('No se pudo realizar la conexion al servicio rest'.$e);
+    }
+  
+    return new ModifiedResourceResponse($response);
   }
 
 }

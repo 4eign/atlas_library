@@ -23,17 +23,17 @@ class BooksListBlock extends BlockBase {
     return [
       'title' => $this->t('Lista de libros'),
       'filters_fields' =>  [
-        'filter1' => ['title' => $this->t("Autor"), 'id' => 'author_filter', 'show' => 1, 'weight' => 1, 'class' => '1-columns', 'type' => 'text_field', 'validate_length' => 145, 'autocomplete' => TRUE],
-        'filter2' => ['title' => $this->t("Título"), 'id' => 'title_filter', 'show' => 1,'weight' => 2, 'class' => '1-columns', 'type' => 'text_field', 'validate_length' => 200, 'autocomplete' => TRUE],
-        'filter3' => ['title' => $this->t("Descripción"), 'id' => 'description_filter', 'show' => 1, 'weight' => 3, 'class' => '1-columns', 'type' => 'text_field', 'validate_length' => 300],
-        'filter4' => ['title' => $this->t("Estado"),'id' => 'status_filter', 'show' => 1, 'weight' => 4, 'class' => '1-columns', 'type' => 'text_field', 'validate_length' => 200],
+        'author_filter' => ['title' => $this->t("Autor"), 'id' => 'author', 'show' => 1, 'weight' => 1, 'class' => '1-columns', 'type' => 'text_field', 'place_holder' => '', 'validate_length' => 145, 'autocomplete' => TRUE],
+        'title_filter' => ['title' => $this->t("Título"), 'id' => 'name', 'show' => 1,'weight' => 2, 'class' => '1-columns', 'type' => 'text_field', 'place_holder' => '', 'validate_length' => 200, 'autocomplete' => TRUE],
+        'description_filter' => ['title' => $this->t("Descripción"), 'id' => 'description', 'show' => 1, 'weight' => 3, 'class' => '1-columns', 'type' => 'text_field', 'place_holder' => '', 'validate_length' => 300],
+        'status_filter' => ['title' => $this->t("Estado"),'id' => 'status', 'show' => 1, 'weight' => 4, 'class' => '1-columns', 'type' => 'text_field', 'place_holder' => '', 'validate_length' => 200],
       ],
       'content_fields' =>  [
-        'field1' => ['title' => $this->t("Autor"), 'id' => 'field_autor', 'layout' => 'destacado', 'show' => 1 ],
-        'field2' => ['title' => $this->t("Título"), 'id' => 'field_title', 'layout' => 'destacado', 'show' => 1 ],
-        'field3' => ['title' => $this->t("Descripción"), 'id' => 'body', 'layout' => 'destacado', 'show' => 1 ],
-        'field4' => ['title' => $this->t("Precio"), 'id' => 'field_precio', 'layout' => 'destacado', 'show' => 1 ],
-        'field5' => ['title' => $this->t("Estado"), 'id' => 'field_libro_nuevo', 'layout' => 'destacado', 'show' => 1 ],
+        'autor_field' => ['title' => $this->t("Autor"), 'id' => 'autor', 'layout' => 'destacado', 'show' => 1 ],
+        'title_field' => ['title' => $this->t("Título"), 'id' => 'title', 'layout' => 'destacado', 'show' => 1 ],
+        'body_field' => ['title' => $this->t("Descripción"), 'id' => 'body', 'layout' => 'destacado', 'show' => 1 ],
+        'price_field' => ['title' => $this->t("Precio"), 'id' => 'price', 'layout' => 'destacado', 'show' => 1 ],
+        'new_book_field' => ['title' => $this->t("Estado"), 'id' => 'new_book', 'layout' => 'destacado', 'show' => 1 ],
       ]
     ] + parent::defaultConfiguration();
   
@@ -76,7 +76,7 @@ class BooksListBlock extends BlockBase {
       $form['options']['filters'][$id]['type'] = array(
         '#type' => 'select',
         '#options' => array(
-          'text_field' => $this->t('campo de texto'),
+          'text_field' => $this->t('Campo de texto'),
           'text_area' => $this->t('Area de texto'),
           'check_box' => $this->t('Chekbox'),
           'select' => $this->t('Lista desplegable'),
