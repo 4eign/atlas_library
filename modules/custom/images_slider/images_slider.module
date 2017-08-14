@@ -28,8 +28,13 @@ function images_slider_help($route_name, RouteMatchInterface $route_match) {
  */
 function images_slider_theme() {
   return [
-    'images_slider' => [
-      'render element' => 'children',
-    ],
+    'images_slider' => array(
+      'variables' => array(
+        'uuid' => NULL,
+        'images' => NULL,
+        'config' => NULL,
+      ),
+      'template' => 'images-slider',
+    ),
   ];
 }

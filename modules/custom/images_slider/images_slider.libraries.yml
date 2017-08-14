@@ -1,0 +1,9 @@
+slider:
+  version: 1.x
+  js:
+    js/behavior/materializeInit.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - drupal_angular/angular.all
+

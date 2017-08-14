@@ -84,6 +84,36 @@ class SliderImageEntity extends ContentEntityBase implements SliderImageEntityIn
     $this->set('name', $name);
     return $this;
   }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getRedirectUrl() {
+    return $this->get('redirect_url')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setRedirectUrl($redirectUrl) {
+    $this->set('redirect_url', $redirectUrl);
+    return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getImage() {
+    return $this->get('image');
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setImage($image) {
+    $this->set('image', $image);
+    return $this;
+  }
 
   /**
    * {@inheritdoc}

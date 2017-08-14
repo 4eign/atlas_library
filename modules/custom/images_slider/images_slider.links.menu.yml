@@ -11,4 +11,4 @@ slider_image_entity.admin.structure.settings:
   title: Slider image entity settings
   description: 'Configure Slider image entity entities'
   route_name: slider_image_entity.settings
-  parent: system.admin_structure
+  parent: entity.slider_image_entity.collection
