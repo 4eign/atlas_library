@@ -1,0 +1,32 @@
+<!-- Add you custom twig html here -->
+<div class="container">
+{{ kint(form) }}
+  <form{{ attributes }}>
+    <div class="row">{{ form.message }}</div>
+    <div class="row">
+      <div class="col s12 m6 l6">
+        {{ form.name }}
+      </div>
+      <div class="col s12 m6 l6">
+        {{ form.phone_number }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m12 l12">
+        {{ form.description }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m12 l12">
+        {{ form.email }}
+      </div>
+    </div>
+    {{ form.actions.submit }}
+
+    {{ form.form_build_id }} {# required #}
+    {{ form.form_id }} {# required #}
+    {{ form.form_token }} {# required #}
+
+  </form>
+</div>
+
